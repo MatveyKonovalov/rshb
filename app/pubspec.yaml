@@ -1,0 +1,22 @@
+name: feeding_calculator
+description: >
+  Агро-приложение «Свои Финансы»: расчёт норм кормления КРС, МРС, свиней
+  и птицы + годовая потребность хозяйства в кормах. Демо без бэкенда.
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.4.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  provider: ^6.1.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
