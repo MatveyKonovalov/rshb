@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>АгроКорм: макеты экранов</title>
+<style>
+  body { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; background: #e8efe6; margin: 0; padding: 24px; color: #222; }
+  h1 { font-size: 20px; color: #1b5e20; margin: 0 0 4px; }
+  p.sub { margin: 0 0 20px; font-size: 13px; color: #555; }
+  .grid { display: flex; flex-wrap: wrap; gap: 28px; justify-content: center; }
+  figure { margin: 0; }
+  .phone { width: 260px; height: 520px; background: #fff; border-radius: 28px; border: 8px solid #263238; overflow: hidden; position: relative; box-shadow: 0 6px 18px rgba(0,0,0,.2); }
+  figcaption { text-align: center; font-size: 13px; margin-top: 8px; font-weight: 600; }
+  .bar { background: #2e7d32; color: #fff; padding: 14px 12px 12px; font-weight: 600; font-size: 14px; }
+  .bar small { display: block; font-weight: 400; opacity: .85; font-size: 11px; }
+  .body { padding: 10px; font-size: 12px; }
+  .card { background: #f1f8e9; border-radius: 10px; padding: 8px 10px; margin-bottom: 8px; }
+  .row { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid #eee; }
+  .muted { color: #777; font-size: 11px; }
+  .stats { display: flex; gap: 6px; margin-bottom: 10px; }
+  .stat { flex: 1; background: #e8f5e9; border-radius: 10px; padding: 8px 4px; text-align: center; }
+  .stat b { display: block; font-size: 14px; color: #1b5e20; }
+  .stat span { font-size: 10px; color: #555; }
+  .btn { background: #2e7d32; color: #fff; border-radius: 10px; padding: 10px; text-align: center; font-weight: 600; margin: 8px 0; }
+  .btn.outline { background: #fff; color: #2e7d32; border: 1.5px solid #2e7d32; }
+  .field { border: 1px solid #bbb; border-radius: 8px; padding: 10px; margin-bottom: 10px; color: #555; }
+  .chips { display: flex; gap: 6px; margin-bottom: 10px; }
+  .chip { border: 1px solid #2e7d32; border-radius: 16px; padding: 4px 10px; font-size: 11px; color: #2e7d32; }
+  .chip.on { background: #2e7d32; color: #fff; }
+  .nav { position: absolute; bottom: 0; left: 0; right: 0; display: flex; justify-content: space-around; background: #fafafa; border-top: 1px solid #ddd; padding: 6px 0 8px; font-size: 10px; color: #666; }
+  .nav .on { color: #2e7d32; font-weight: 700; }
+  table { width: 100%; border-collapse: collapse; font-size: 10.5px; }
+  th, td { border-bottom: 1px solid #ddd; padding: 4px 3px; text-align: left; }
+  th { color: #2e7d32; }
+  .dots { text-align: center; margin: 22px 0 10px; }
+  .dot { display: inline-block; width: 14px; height: 14px; border-radius: 50%; border: 2px solid #2e7d32; margin: 0 5px; }
+  .dot.on { background: #2e7d32; }
+  .pad { display: grid; grid-template-columns: repeat(3, 1fr); justify-items: center; gap: 6px; padding: 0 30px; }
+  .key { width: 56px; height: 46px; line-height: 46px; border-radius: 50%; background: #f1f8e9; text-align: center; font-size: 18px; }
+  .logo { width: 72px; height: 72px; border-radius: 50%; background: #e8f5e9; margin: 30px auto 10px; text-align: center; line-height: 72px; font-size: 34px; }
+  .avatar { width: 72px; height: 72px; border-radius: 50%; background: #c8e6c9; margin: 14px auto 6px; text-align: center; line-height: 72px; font-size: 24px; color: #1b5e20; font-weight: 700; }
+  .sw { float: right; width: 30px; height: 16px; background: #2e7d32; border-radius: 8px; position: relative; }
+  .sw::after { content: ""; position: absolute; right: 2px; top: 2px; width: 12px; height: 12px; border-radius: 50%; background: #fff; }
+  .note { max-width: 1000px; margin: 28px auto 0; font-size: 12px; color: #555; }
+</style>
+</head>
+<body>
+
+<h1>АгроКорм: макеты экранов</h1>
+<p class="sub">Условные данные. Цифры иллюстративные и не совпадают с расчётами приложения.</p>
+
+<div class="grid">
+
+  <!-- 1. Вход -->
+  <figure>
+    <div class="phone">
+      <div class="body" style="padding-top:20px">
+        <div class="logo">🌾</div>
+        <div style="text-align:center;font-weight:700;font-size:18px;color:#1b5e20">АгроКорм</div>
+        <div style="text-align:center;font-size:11px;color:#666;margin-bottom:24px">Расчёт норм кормления</div>
+        <div class="field">Логин или телефон</div>
+        <div class="field">Пароль</div>
+        <div class="btn">Войти</div>
+        <div style="text-align:center;font-size:11px;color:#2e7d32;margin-top:8px">Забыли пароль?</div>
+      </div>
+    </div>
+    <figcaption>1. Вход</figcaption>
+  </figure>
+
+  <!-- 2. PIN -->
+  <figure>
+    <div class="phone">
+      <div class="body" style="text-align:center">
+        <div style="font-size:40px;margin-top:40px">🔒</div>
+        <div style="font-size:16px;font-weight:600;margin-top:6px">Введите PIN-код</div>
+        <div class="dots"><span class="dot on"></span><span class="dot on"></span><span class="dot"></span><span class="dot"></span></div>
+        <div class="pad">
+          <div class="key">1</div><div class="key">2</div><div class="key">3</div>
+          <div class="key">4</div><div class="key">5</div><div class="key">6</div>
+          <div class="key">7</div><div class="key">8</div><div class="key">9</div>
+          <div></div><div class="key">0</div><div class="key">⌫</div>
+        </div>
+      </div>
+    </div>
+    <figcaption>2. PIN-код</figcaption>
+  </figure>
+
+  <!-- 3. Главная -->
+  <figure>
+    <div class="phone">
+      <div class="bar">КФХ «Заря»<small>Сергей, добрый день</small></div>
+      <div class="body">
+        <div class="stats">
+          <div class="stat"><b>8 500</b><span>Поголовье</span></div>
+          <div class="stat"><b>412 т</b><span>Корма в год</span></div>
+          <div class="stat"><b>1,2 млн ₽</b><span>Бюджет</span></div>
+        </div>
+        <div class="btn outline">Годовая потребность кормов</div>
+        <div class="muted" style="margin:8px 0 4px">ГРУППЫ</div>
+        <div class="card"><b>Дойное стадо</b><div class="muted">КРС · 120 гол.</div></div>
+        <div class="card"><b>Бройлеры</b><div class="muted">Птица · 5 000 гол.</div></div>
+        <div class="card"><b>Свиньи на откорме</b><div class="muted">Свиньи · 400 гол.</div></div>
+      </div>
+      <div class="nav"><span class="on">Главная</span><span>Стадо</span><span>Корма</span><span>Профиль</span></div>
+    </div>
+    <figcaption>3. Главная</figcaption>
+  </figure>
+
+  <!-- 4. Список стада -->
+  <figure>
+    <div class="phone">
+      <div class="bar">Стадо и группы</div>
+      <div class="body">
+        <div class="chips"><span class="chip on">Все</span><span class="chip">КРС</span><span class="chip">МРС</span><span class="chip">Свиньи</span><span class="chip">Птица</span></div>
+        <div class="card"><b>Дойное стадо</b><div class="muted">КРС · молоко · 120 гол. · 600 кг</div></div>
+        <div class="card"><b>Молодняк на откорме</b><div class="muted">КРС · мясо · 80 гол. · 280 кг</div></div>
+        <div class="card"><b>Овцематки</b><div class="muted">МРС · молоко · 300 гол. · 65 кг</div></div>
+        <div class="card"><b>Свиньи на откорме</b><div class="muted">Свиньи · мясо · 400 гол.</div></div>
+        <div class="card"><b>Куры-несушки</b><div class="muted">Птица · яйца · 2 000 гол.</div></div>
+      </div>
+      <div class="nav"><span>Главная</span><span class="on">Стадо</span><span>Корма</span><span>Профиль</span></div>
+    </div>
+    <figcaption>4. Список групп</figcaption>
+  </figure>
+
+  <!-- 5. Детали группы -->
+  <figure>
+    <div class="phone">
+      <div class="bar">Дойное стадо<small>КРС · молоко · стойловое</small></div>
+      <div class="body">
+        <div class="card">
+          <div class="row"><span>Поголовье</span><b>120 гол.</b></div>
+          <div class="row"><span>Возраст</span><b>1 200 дн.</b></div>
+          <div class="row"><span>Вес</span><b>600 кг</b></div>
+          <div class="row" style="border:0"><span>Удой</span><b>25 л/сут</b></div>
+        </div>
+        <div class="muted" style="margin:6px 0 4px">СУТОЧНЫЙ РАЦИОН НА ГОЛОВУ</div>
+        <table>
+          <tr><th>Корм</th><th>Тип</th><th>СВ, кг</th><th>Масса, кг</th></tr>
+          <tr><td>Сено луговое</td><td>Грубый</td><td>8,8</td><td>10,2</td></tr>
+          <tr><td>Силос кукурузный</td><td>Сочный</td><td>4,4</td><td>14,7</td></tr>
+          <tr><td>Комбикорм КРС</td><td>Концентрат</td><td>5,3</td><td>6,0</td></tr>
+        </table>
+        <div class="card" style="margin-top:10px">
+          <div class="row"><span>Всего СВ, кг/гол.</span><b>18,5</b></div>
+          <div class="row" style="border:0"><span>Стоимость в сутки на группу</span><b>≈ 52 тыс. ₽</b></div>
+        </div>
+      </div>
+    </div>
+    <figcaption>5. Детали группы</figcaption>
+  </figure>
+
+  <!-- 6. Каталог -->
+  <figure>
+    <div class="phone">
+      <div class="bar">Каталог кормов</div>
+      <div class="body">
+        <div class="field" style="padding:6px 8px">🔍 Поиск корма</div>
+        <table>
+          <tr><th>Корм</th><th>Тип</th><th>СВ</th><th>₽/т</th></tr>
+          <tr><td>Сено луговое</td><td>Грубый</td><td>86%</td><td>9 000</td></tr>
+          <tr><td>Солома пшеничная</td><td>Грубый</td><td>88%</td><td>4 000</td></tr>
+          <tr><td>Силос кукурузный</td><td>Сочный</td><td>30%</td><td>2 500</td></tr>
+          <tr><td>Пастбищная трава</td><td>Сочный</td><td>20%</td><td>600</td></tr>
+          <tr><td>Комбикорм КРС</td><td>Концентрат</td><td>88%</td><td>18 000</td></tr>
+          <tr><td>Ячмень фуражный</td><td>Концентрат</td><td>86%</td><td>14 000</td></tr>
+        </table>
+      </div>
+      <div class="nav"><span>Главная</span><span>Стадо</span><span class="on">Корма</span><span>Профиль</span></div>
+    </div>
+    <figcaption>6. Каталог (таблица)</figcaption>
+  </figure>
+
+  <!-- 7. Годовая потребность -->
+  <figure>
+    <div class="phone">
+      <div class="bar">Годовая потребность<small>с учётом потерь 5–8%</small></div>
+      <div class="body">
+        <div class="card" style="background:#c8e6c9">
+          <div class="row"><span>Всего кормов</span><b>412 т</b></div>
+          <div class="row" style="border:0"><span>Стоимость</span><b>1,2 млн ₽</b></div>
+        </div>
+        <div class="row"><div><b>Сено луговое</b><div class="muted">Грубый</div></div><div style="text-align:right"><b>168 т</b><div class="muted">1,5 млн ₽</div></div></div>
+        <div class="row"><div><b>Силос кукурузный</b><div class="muted">Сочный</div></div><div style="text-align:right"><b>121 т</b><div class="muted">0,3 млн ₽</div></div></div>
+        <div class="row"><div><b>Комбикорм КРС</b><div class="muted">Концентрат</div></div><div style="text-align:right"><b>43 т</b><div class="muted">0,8 млн ₽</div></div></div>
+        <div class="row"><div><b>Комбикорм свиней</b><div class="muted">Концентрат</div></div><div style="text-align:right"><b>32 т</b><div class="muted">0,7 млн ₽</div></div></div>
+      </div>
+    </div>
+    <figcaption>7. Годовая потребность</figcaption>
+  </figure>
+
+  <!-- 8. Профиль -->
+  <figure>
+    <div class="phone">
+      <div class="body">
+        <div class="avatar">СП</div>
+        <div style="text-align:center;font-weight:700;font-size:14px">Сергей Петрович Иванов</div>
+        <div style="text-align:center;font-size:11px;color:#666;margin-bottom:12px">КФХ «Заря»</div>
+        <div class="card">
+          <div class="row"><span>Регион</span><b>Воронежская обл.</b></div>
+          <div class="row" style="border:0"><span>Годовая потребность</span><b>›</b></div>
+        </div>
+        <div class="card">
+          <div class="row" style="border:0"><span>Уведомления о нормах</span><span class="sw"></span></div>
+        </div>
+        <div class="btn outline" style="margin-top:14px">Выйти</div>
+      </div>
+      <div class="nav"><span>Главная</span><span>Стадо</span><span>Корма</span><span class="on">Профиль</span></div>
+    </div>
+    <figcaption>8. Профиль</figcaption>
+  </figure>
+
+</div>
+
+<p class="note">Навигация: Вход → PIN-код → Главная (нижнее меню: Главная, Стадо, Корма, Профиль). Из «Главной» открываются «Годовая потребность», из списка стада — «Детали группы», из профиля — «Годовая потребность» и выход на экран входа.</p>
+
+</body>
+</html>
